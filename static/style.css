@@ -1,0 +1,58 @@
+@import 'https://fonts.googleapis.com/css?family=Quicksand:300,400,700';
+/* CSS declarations go here */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f2f2f2;
+  padding: 0;
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100%;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.mainForm {
+  text-align: center;
+}
+
+.mainForm .inputText {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 100;
+  background: white;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: 1px solid #f2f2f2;
+}
+
+.mainForm .divButton {
+  margin-top: 10px;
+}
+
+.mainForm .mainButton {
+  cursor: pointer;
+  background-color: #008CBA; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.mainForm .mainButton:hover {
+  background-color: #222222;
+}

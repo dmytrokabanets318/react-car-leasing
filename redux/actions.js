@@ -1,0 +1,36 @@
+import fetch from 'isomorphic-fetch'
+
+let actions = {
+  calculateNow: function(price, dp, year) {
+    return {
+      type: 'CALCULATE_NOW',
+      price: price,
+      dp: dp,
+      year: year
+    }
+  },
+
+  addTodo: function(text) {
+    return {
+      type: 'ADD_TODO',
+      text: text
+    }
+  },
+
+  completeTodo: function(id) {
+    return {
+      type: 'COMPLETE_TODO',
+      id: id
+    }
+  },
+
+  deleteTodo: function(id) {
+    return {
+      type: 'DELETE_TODO',
+      id: id
+    }
+  }
+  
+}
+
+export default actions
