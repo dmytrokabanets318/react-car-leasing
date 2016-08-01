@@ -8,7 +8,7 @@ class FormInput extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      inputPrice: 10000000,
+      inputPrice: 100000000,
       inputDownPayment: 50000000,
       inputSelectYear: 24
     }
@@ -36,7 +36,7 @@ class FormInput extends Component {
     event.preventDefault()
     const price = this.state.inputPrice
     const dp = this.state.inputDownPayment
-    const year = 36
+    const year = this.state.inputSelectYear
 
     // this.props.addTodo(text)
     this.props.calculateNow(price, dp, year)

@@ -11,7 +11,24 @@ function getResultId(state) {
 }
 
 function monthlyResult(price, dp, year) {
-  return ['monthly', 'success', 'message']
+  // monthly formula
+  //  PL x ((interest_rate x year) / 100)
+  /// (PL) primary loan formula = {price - dp}
+  ///
+  let result, success, message
+  const interest_rate = 5 // 8% interest rate
+  const set_price = price
+  const set_dp = dp
+  const set_year = year/12
+  const pl = set_price - set_dp
+  const ir_total = (interest_rate*set_year)/100
+  const monthly_result = pl*ir_total
+  const ir_result = pl+monthly_result
+  result = ir_result/year
+  // console.log(pl+" "+ir_total+" "+monthly_result+" "+result)
+
+
+  return [Math.round(result), 'success', 'message']
 }
 
 let reducer = function(state, action) {
