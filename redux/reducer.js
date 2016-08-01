@@ -11,7 +11,7 @@ function getResultId(state) {
 }
 
 function monthlyResult(price, dp, year) {
-  return 'wak kaji sunari'
+  return ['monthly', 'success', 'message']
 }
 
 let reducer = function(state, action) {
@@ -24,6 +24,9 @@ let reducer = function(state, action) {
           price: action.price,
           dp: action.dp,
           year: action.year,
+          monthly: monthlyResult(action.price, action.dp, action.year)[0],
+          success: monthlyResult(action.price, action.dp, action.year)[1],
+          message: monthlyResult(action.price, action.dp, action.year)[2],
           id: getResultId(state)
         }]
       })

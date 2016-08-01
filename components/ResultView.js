@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
+import ResultItem from './ResultItem'
 
 class ResultView extends Component {
   render() {
     return (
-      <div>
-        Result here
-      </div>
+      <ul>
+        {
+          this.props.results.map((result) => {
+
+                return <ResultItem key={result.id} result={result} actions={this.props.actions}/>
+              
+          })
+        }
+      </ul>
     )
   }
 }

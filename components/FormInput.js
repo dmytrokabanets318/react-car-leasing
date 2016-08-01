@@ -8,8 +8,8 @@ class FormInput extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      inputPrice: '',
-      inputDownPayment: '',
+      inputPrice: 10000000,
+      inputDownPayment: 50000000,
       inputSelectYear: 24
     }
   }
@@ -47,7 +47,9 @@ class FormInput extends Component {
       { value: '12', label: '1 Year' },
       { value: '24', label: '2 Year' },
       { value: '36', label: '3 Year' },
-      { value: '48', label: '4 Year' }
+      { value: '48', label: '4 Year' },
+      { value: '60', label: '5 Year' },
+      { value: '72', label: '6 Year' }
     ];
     return (
       <div>
@@ -56,17 +58,16 @@ class FormInput extends Component {
             type="text"
             placeholder="Set Car Price (Rp.)"
             ref="price"
-            value={this.state.inputPrice}
+            defaultValue={this.state.inputPrice}
             className="inputText"
-            onChange={this.handleChange.bind(this)}
           />
           <input
             type="text"
             placeholder="Down Payment (Rp.)"
             ref="dp"
-            value={this.state.inputText}
+            defaultValue={this.state.inputDownPayment}
             className="inputText"
-            onChange={this.handleChange.bind(this)}
+
           />
           <Select
             name="form-field-name"
@@ -76,7 +77,7 @@ class FormInput extends Component {
             onChange={this.selectChange.bind(this)}
           />
           <div className="divButton">
-            <input className="mainButton" type="submit" value="Submit"/>
+            <input className="mainButton" type="submit" value="Calculate Now"/>
           </div>
         </form>
       </div>

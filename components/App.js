@@ -10,7 +10,7 @@ class App extends Component {
     return <div>
       <h1 className="thin">Provide Information Here</h1>
       <FormInput calculateNow={this.props.actions.calculateNow}/>
-      <ResultView />
+      <ResultView actions={this.props.actions} results={this.props.results} />
     </div>
   }
 }
