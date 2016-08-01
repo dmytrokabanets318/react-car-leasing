@@ -10,8 +10,8 @@ function getResultId(state) {
   }, -1) + 1
 }
 
-function bambang() {
-  return Math.ceil(Math.random()*100)
+function monthlyResult(price, dp, year) {
+  return 'wak kaji sunari'
 }
 
 let reducer = function(state, action) {
@@ -28,29 +28,6 @@ let reducer = function(state, action) {
         }]
       })
 
-    case 'ADD_TODO':
-      return Object.assign({}, state, {
-        todos: [{
-          text: action.text,
-          completed: true,
-          id: bambang()
-        }, ...state.todos]
-      })
-
-    case 'COMPLETE_TODO':
-      return Object.assign({}, state, {
-        todos: state.todos.map((todo) => {
-          return todo.id === action.id ?
-            Object.assign({}, todo, {completed: !todo.completed}) : todo
-        })
-      })
-
-    case 'DELETE_TODO':
-      return Object.assign({}, state, {
-        todos: state.todos.filter((todo) => {
-          return todo.id !== action.id
-        })
-      })
 
     default:
       return state;

@@ -10,7 +10,7 @@ class FormInput extends Component {
     this.state = {
       inputPrice: '',
       inputDownPayment: '',
-      inputSelectYear: ''
+      inputSelectYear: 24
     }
   }
 
@@ -34,8 +34,12 @@ class FormInput extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    const text = this.state.inputText
-    this.props.addTodo(text)
+    const price = this.state.inputPrice
+    const dp = this.state.inputDownPayment
+    const year = 36
+
+    // this.props.addTodo(text)
+    this.props.calculateNow(price, dp, year)
   }
 
   render() {
@@ -66,7 +70,7 @@ class FormInput extends Component {
           />
           <Select
             name="form-field-name"
-            value="24"
+            value={this.state.inputSelectYear}
             className="inputSelect"
             options={options}
             onChange={this.selectChange.bind(this)}

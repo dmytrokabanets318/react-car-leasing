@@ -1,17 +1,17 @@
 {
-  "name": "react-todo-list",
+  "name": "react-car-leasing",
   "version": "1.0.0",
-  "description": "A simple todo list app built with React, Redux and Webpack",
+  "description": "This is a simple car leasing calculation app built with React, Redux and Webpack.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon server/server.js --ignore components"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kweiberth/react-todo-list.git"
+    "url": "https://github.com/mkhuda/react-car-leasing.git"
   },
-  "author": "Kurt Weiberth",
-  "license": "ISC",
+  "author": "Muhammad K Huda",
+  "license": "none",
   "dependencies": {
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.2",

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import FormInput from './FormInput'
 import ResultView from './ResultView'
-// import TodoInput from './TodoInput'
-import TodoList from './TodoList'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import actions from '../redux/actions'

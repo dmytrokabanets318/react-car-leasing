@@ -4,7 +4,7 @@ class ResultView extends Component {
   render() {
     return (
       <div>
-        Wak kaji sunari
+        Result here
       </div>
     )
   }
