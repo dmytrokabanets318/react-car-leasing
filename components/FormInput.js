@@ -12,6 +12,7 @@ class FormInput extends Component {
       inputDownPayment: '',
       inputSelectYear: ''
     }
+
   }
 
   handleChange(event) {
@@ -43,6 +44,7 @@ class FormInput extends Component {
   }
 
   render() {
+
     const options = [
       { value: '12', label: '1 Year' },
       { value: '24', label: '2 Year' },
@@ -51,6 +53,7 @@ class FormInput extends Component {
       { value: '60', label: '5 Year' },
       { value: '72', label: '6 Year' }
     ];
+    
     return (
       <div>
         <form className="mainForm" onSubmit={this.handleSubmit.bind(this)}>
