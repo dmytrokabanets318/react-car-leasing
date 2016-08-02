@@ -8,9 +8,9 @@ class FormInput extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      inputPrice: 100000000,
-      inputDownPayment: 50000000,
-      inputSelectYear: 24
+      inputPrice: '',
+      inputDownPayment: '',
+      inputSelectYear: ''
     }
   }
 
@@ -34,8 +34,8 @@ class FormInput extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    const price = this.state.inputPrice
-    const dp = this.state.inputDownPayment
+    const price = ReactDOM.findDOMNode(this.refs.price).value.trim();
+    const dp = ReactDOM.findDOMNode(this.refs.dp).value.trim();
     const year = this.state.inputSelectYear
 
     // this.props.addTodo(text)

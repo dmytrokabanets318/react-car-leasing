@@ -6,6 +6,6 @@ let finalCreateStore = compose(
   applyMiddleware(logger())
 )(createStore)
 
-export default function configureStore(initialState = { todos: [] }) {
+export default function configureStore(initialState = { results: [] }) {
   return finalCreateStore(reducer, initialState)
 }
