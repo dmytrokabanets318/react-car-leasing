@@ -8,7 +8,7 @@ class ResultView extends Component {
         {
           this.props.results.map((result) => {
 
-                return <ResultItem key={result.id} result={result} actions={this.props.actions}/>
+                return <ResultItem key={result.id} success={result.success} result={result} actions={this.props.actions}/>
 
           })
         }

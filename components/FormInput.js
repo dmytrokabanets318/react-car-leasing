@@ -46,12 +46,12 @@ class FormInput extends Component {
   render() {
 
     const options = [
-      { value: '12', label: '1 Year' },
-      { value: '24', label: '2 Year' },
-      { value: '36', label: '3 Year' },
-      { value: '48', label: '4 Year' },
-      { value: '60', label: '5 Year' },
-      { value: '72', label: '6 Year' }
+      { value: '12', label: '1 Year Loan' },
+      { value: '24', label: '2 Year Loan' },
+      { value: '36', label: '3 Year Loan' },
+      { value: '48', label: '4 Year Loan' },
+      { value: '60', label: '5 Year Loan' },
+      { value: '72', label: '6 Year Loan' }
     ];
 
     return (
