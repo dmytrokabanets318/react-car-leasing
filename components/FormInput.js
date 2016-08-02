@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import actions from '../redux/actions'
+import CurrencyInput from 'react-currency-input';
 import Select from 'react-select'
 
 class FormInput extends Component {
@@ -27,8 +28,11 @@ class FormInput extends Component {
   }
 
   selectChange(val) {
-    console.log("Selected: " + val.value);
+    const price = ReactDOM.findDOMNode(this.refs.price).value.trim();
+    const dp = ReactDOM.findDOMNode(this.refs.dp).value.trim();
     this.setState({
+      inputPrice: price,
+      inputDownPayment: dp,
       inputSelectYear: val.value
     })
   }
@@ -53,7 +57,7 @@ class FormInput extends Component {
       { value: '60', label: '5 Year' },
       { value: '72', label: '6 Year' }
     ];
-    
+
     return (
       <div>
         <form className="mainForm" onSubmit={this.handleSubmit.bind(this)}>
@@ -63,6 +67,7 @@ class FormInput extends Component {
             ref="price"
             defaultValue={this.state.inputPrice}
             className="inputText"
+
           />
           <input
             type="text"

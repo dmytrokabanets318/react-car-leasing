@@ -17,8 +17,8 @@ function monthlyResult(price, dp, year) {
   ///
   let result, success, message
   const interest_rate = 5 // 8% interest rate
-  const set_price = price
-  const set_dp = dp
+  const set_price = parseInt(price)
+  const set_dp = parseInt(dp)
   const set_year = year/12
   const pl = set_price - set_dp
   const ir_total = (interest_rate*set_year)/100
@@ -26,9 +26,12 @@ function monthlyResult(price, dp, year) {
   const ir_result = pl+monthly_result
   result = ir_result/year
   // console.log(pl+" "+ir_total+" "+monthly_result+" "+result)
+  if (parseInt(set_dp) > parseInt(set_price)) {
+    return [0, false, 'Down Payment cannot higher than Main Price']
+  } else {
+    return [Math.round(result), true, 'Calculated']
+  }
 
-
-  return [Math.round(result), 'success', 'message']
 }
 
 let reducer = function(state, action) {
