@@ -27,9 +27,9 @@ function monthlyResult(price, dp, year) {
   result = ir_result/year
   // console.log(pl+" "+ir_total+" "+monthly_result+" "+result)
   if (parseInt(set_dp) > parseInt(set_price)) {
-    return [0, false, 'Down Payment cannot higher than Main Price']
+    return [0, false, 'Down Payment cannot higher than Main Price', interest_rate, pl]
   } else {
-    return [Math.round(result), true, 'Calculated']
+    return [Math.round(result), true, 'Calculated', interest_rate, pl]
   }
 
 }
@@ -45,6 +45,8 @@ let reducer = function(state, action) {
           dp: action.dp,
           year: action.year,
           monthly: monthlyResult(action.price, action.dp, action.year)[0],
+          interest_rate: monthlyResult(action.price, action.dp, action.year)[3],
+          primary_loan: monthlyResult(action.price, action.dp, action.year)[4],
           success: monthlyResult(action.price, action.dp, action.year)[1],
           message: monthlyResult(action.price, action.dp, action.year)[2],
           id: getResultId(state)
