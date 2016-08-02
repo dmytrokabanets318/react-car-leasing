@@ -5,7 +5,9 @@ import configureStore from '../redux/store'
 import { Provider } from 'react-redux'
 
 let initialState = {
-  results: []
+  results: {
+    show: false
+  }
 }
 
 let store = configureStore(initialState)
