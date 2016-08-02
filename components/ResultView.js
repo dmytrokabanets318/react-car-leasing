@@ -4,12 +4,12 @@ import ResultItem from './ResultItem'
 class ResultView extends Component {
   render() {
     return (
-      <ul>
+      <ul className="unordered">
         {
           this.props.results.map((result) => {
 
                 return <ResultItem key={result.id} result={result} actions={this.props.actions}/>
-              
+
           })
         }
       </ul>
