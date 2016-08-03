@@ -4,7 +4,8 @@
   "description": "This is a simple car leasing calculation app built with React, Redux and Webpack.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon server/server.js --ignore components"
+    "serve": "nodemon server/server.js --ignore components",
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",

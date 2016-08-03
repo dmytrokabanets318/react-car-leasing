@@ -36,32 +36,19 @@ let reducer = function(state, action) {
       return {
         results:
           {
-                price: action.price,
-                dp: action.dp,
-                year: action.year,
-                monthly: monthlyResult(action.price, action.dp, action.year)[0],
-                interest_rate: monthlyResult(action.price, action.dp, action.year)[3],
-                primary_loan: monthlyResult(action.price, action.dp, action.year)[4],
-                success: monthlyResult(action.price, action.dp, action.year)[1],
-                message: monthlyResult(action.price, action.dp, action.year)[2],
-                show: true,
-                id: 1
+            price: action.price,
+            dp: action.dp,
+            year: action.year,
+            monthly: monthlyResult(action.price, action.dp, action.year)[0],
+            interest_rate: monthlyResult(action.price, action.dp, action.year)[3],
+            primary_loan: monthlyResult(action.price, action.dp, action.year)[4],
+            success: monthlyResult(action.price, action.dp, action.year)[1],
+            message: monthlyResult(action.price, action.dp, action.year)[2],
+            show: true,
+            id: 1
           }
-
+          
       }
-      // return Object.assign({}, state, {
-      //   results:[{
-      //     price: action.price,
-      //     dp: action.dp,
-      //     year: action.year,
-      //     monthly: monthlyResult(action.price, action.dp, action.year)[0],
-      //     interest_rate: monthlyResult(action.price, action.dp, action.year)[3],
-      //     primary_loan: monthlyResult(action.price, action.dp, action.year)[4],
-      //     success: monthlyResult(action.price, action.dp, action.year)[1],
-      //     message: monthlyResult(action.price, action.dp, action.year)[2],
-      //     id: 12
-      //   }]
-      // })
       // return Object.assign({}, state, {
       //   results:[{
       //     price: action.price,
