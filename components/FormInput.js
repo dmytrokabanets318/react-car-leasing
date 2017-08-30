@@ -13,14 +13,20 @@ class FormInput extends Component {
       inputDownPayment: '',
       inputSelectYear: ''
     }
-
   }
 
-  handleChange(event) {
-    const price = this.refs.price.value
-    const dp = this.refs.price.value
+
+  handlePriceChange(event, maskedvalue, floatvalue) {
+    // console.log(floatvalue);
+    const price = floatvalue
     this.setState({
-      inputPrice: price,
+      inputPrice: price
+    })
+  }
+
+  handleDpChange(event, maskedvalue, floatvalue) {
+    const dp = floatvalue
+    this.setState({
       inputDownPayment: dp
     })
   }
@@ -33,10 +39,8 @@ class FormInput extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    const input_price = this.refs.price
-    const value_price = input_price.value
-    const input_dp = this.refs.dp
-    const value_dp = input_dp.value
+    const value_price = this.state.inputPrice
+    const value_dp = this.state.inputDownPayment
     const value_year = this.state.inputSelectYear
 
     // this.props.addTodo(text)
@@ -57,29 +61,42 @@ class FormInput extends Component {
     return (
       <div>
         <form className="mainForm" onSubmit={this.handleSubmit.bind(this)}>
-          <input
-            type="text"
-            placeholder="Set Car Price (Rp.)"
-            ref="price"
-            defaultValue={this.state.inputPrice}
-            className="inputText"
-          />
 
-          <input
-            type="text"
-            placeholder="Down Payment (Rp.)"
-            ref="dp"
-            defaultValue={this.state.inputDownPayment}
-            className="inputText"
-          />
+          <div>
+            <div className="miniLabel">Car Price</div>
+            <CurrencyInput 
+              type="text"
+              placeholder="Set Car Price (Rp.)"
+              ref="priceinput" 
+              precision="0"
+              className="inputText"
+              onChangeEvent={this.handlePriceChange.bind(this)}
+              value={this.state.inputPrice}
+            />
+          </div>
 
-          <Select
-            name="form-field-name"
-            value={this.state.inputSelectYear}
-            className="inputSelect"
-            options={options}
-            onChange={this.selectChange.bind(this)}
-          />
+          <div>
+            <div className="miniLabel">Down Payment</div>
+            <CurrencyInput
+              type="text"
+              placeholder="Down Payment (Rp.)"
+              ref="dpinput" 
+              precision="0"
+              className="inputText"
+              onChangeEvent={this.handleDpChange.bind(this)}
+              value={this.state.inputDownPayment}
+            />
+          </div>
+
+          <div>
+            <Select
+              name="form-field-name"
+              value={this.state.inputSelectYear}
+              className="inputSelect"
+              options={options}
+              onChange={this.selectChange.bind(this)}
+            />
+          </div>
 
           <div className="divButton">
             <input className="mainButton" type="submit" value="Calculate Now"/>
