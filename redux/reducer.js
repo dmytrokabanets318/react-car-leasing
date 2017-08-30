@@ -1,9 +1,3 @@
-// function getResultId(state) {
-//   return state.results.reduce((maxId, result) => {
-//     return Math.max(result.id, maxId)
-//   }, -1) + 1
-// }
-
 function monthlyResult(price, dp, year) {
   // monthly formula
   //  PL x ((interest_rate x year) / 100)
@@ -49,20 +43,6 @@ let reducer = function(state, action) {
           }
           
       }
-      // return Object.assign({}, state, {
-      //   results:[{
-      //     price: action.price,
-      //     dp: action.dp,
-      //     year: action.year,
-      //     monthly: monthlyResult(action.price, action.dp, action.year)[0],
-      //     interest_rate: monthlyResult(action.price, action.dp, action.year)[3],
-      //     primary_loan: monthlyResult(action.price, action.dp, action.year)[4],
-      //     success: monthlyResult(action.price, action.dp, action.year)[1],
-      //     message: monthlyResult(action.price, action.dp, action.year)[2],
-      //     id: getResultId(state)
-      //   }]
-      // })
-
 
     default:
       return state;
